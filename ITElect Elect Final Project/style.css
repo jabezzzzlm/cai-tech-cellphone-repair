@@ -1,0 +1,508 @@
+/* =========================
+   RESET
+========================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+html,
+body{
+    height: 100%;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("Images/bg\ cor2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+    background-color: rgb(6, 6, 29) !important;
+    padding: 15px 0;
+}
+
+.navbar-brand{
+    font-size: 22px;
+    font-weight: bold;
+    color: white ;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-link{
+    margin-left: 10px;
+    transition: 0.3s;
+    color: white;
+}
+
+.nav-link:hover{
+    color: #ffc107 !important;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+.navbar-nav-container{
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#menu-toggle:checked + label + .navbar-nav-container{
+    display: block;
+}
+
+@media(min-width: 992px){
+
+    .navbar-nav-container{
+        display: block !important;
+        width: auto;
+        margin-top: 0;
+    }
+
+}
+
+/* =========================
+   BANNER
+========================= */
+
+#carouselExampleIndicators{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* IMAGE + VIDEO FIT INSIDE WITHOUT CROPPING */
+#carouselExampleIndicators .carousel-item img,
+#carouselExampleIndicators .carousel-item video{
+    width: 100%;
+    height: 900px;
+    object-fit: fill;   /* 👈 KEY CHANGE (no cropping) */
+    background-color: #000; /* fills empty space nicely */
+    border-radius: 12px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    #carouselExampleIndicators{
+        width: 95%;
+    }
+
+    #carouselExampleIndicators .carousel-item img,
+    #carouselExampleIndicators .carousel-item video{
+        height: 250px;
+    }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section{
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('Images/carousel\ 2.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.hero-section h1{
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero-section p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn:hover{
+    border-radius: 10px;
+    color: rgb(4, 4, 146);
+    
+}
+
+/* =========================
+   GENERAL CARDS
+========================= */
+.hero-section .btn{
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+.hero-section .btn:hover{
+    background-color: #212529 !important;
+    color: #ffc107 !important;
+
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.card{
+    border: none;
+    border-radius: 15px;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+/* FEATURE CARD HOVER EFFECT */
+.feature-card{
+    border: none;
+    border-radius: 15px;
+    transition: 0.2s ease;
+    overflow: hidden;
+}
+
+/* Hover */
+.feature-card:hover{
+    background-color: #0d0040 !important;
+    color: #ffc107 !important;
+
+    transform: scale(1.06);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Text Color Change */
+.feature-card:hover h3,
+.feature-card:hover p{
+    color: #ffc107 !important;
+}
+
+/* =========================
+   PRODUCT CARDS
+========================= */
+
+
+/* Card hover effect ONLY in products page */
+.products-page .card{
+    transition: 0.3s ease;
+    background-color: #cfcccc;
+}
+
+/* Hover animation */
+.products-page .card:hover{
+    transform: translateY(-10px);
+    background-color: #09032a !important; /* dark hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Text color change on hover */
+.products-page .card:hover h4,
+.products-page .card:hover p,
+.products-page .card:hover h5{
+    color: #ffc107 !important;
+}
+
+/* Button hover inside product cards */
+.products-page .card:hover .btn{
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+    border: none;
+}
+.row{
+    align-items: flex-start;
+}
+
+/* =========================
+   CARD IMAGES
+========================= */
+.card-img-top{
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* =========================
+   CARD BODY
+========================= */
+.card-body{
+    padding: 20px;
+}
+
+/* =========================
+   PRODUCT DETAILS
+========================= */
+details{
+    width: 100%;
+}
+
+details summary{
+    list-style: none;
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker{
+    display: none;
+}
+
+/* =========================
+   SERVICES
+========================= */
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #f8f9fa;
+}
+/* SERVICE BUTTON */
+.service-btn{
+    border-radius: 30px;
+    padding: 5px 10px;
+    max-width: 200px;
+
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.service-btn:hover{
+    transform: scale(1.04);
+
+    background-color: white;
+    color: black;
+}
+/* SERVICE CARD */
+.service-card{
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    min-height: 250px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background-size 0.5s ease;
+
+    cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.service-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(177, 13, 13, 0.35);
+}
+
+/* DARK OVERLAY */
+.service-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(15, 5, 209, 0.55);
+
+    transition: 0.4s ease;
+}
+
+/* LIGHTER OVERLAY ON HOVER */
+.service-card:hover::before{
+    background: rgba(126, 116, 164, 0.35);
+}
+
+/* CARD TEXT */
+.service-card .card-body{
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+
+    transition: 0.4s ease;
+}
+
+/* TEXT ANIMATION */
+.service-card:hover .card-body{
+    transform: translateY(-5px);
+}
+
+/* TITLE */
+.service-card h3{
+    font-weight: bold;
+    margin-bottom: 15px;
+
+    transition: 0.3s ease;
+}
+
+/* TITLE GLOW EFFECT */
+.service-card:hover h3{
+    letter-spacing: 1px;
+}
+/* Service Cards Background Images */
+.service-card{
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* dark overlay so text is readable */
+.service-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* keep text above overlay */
+.service-card .card-body{
+    position: relative;
+    z-index: 1;
+}
+
+/* individual images */
+.service-img-1{
+    background-image: url("Images/lcd1.jpg");
+}
+
+.service-img-2{
+    background-image: url("Images/batt1.jpg");
+}
+
+.service-img-3{
+    background-image: url("Images/charge1.jpg");
+}
+
+.service-img-4{
+    background-image: url("Images/tb1.jpg");
+}
+
+/* =========================
+   FORMS
+========================= */
+form input,
+form textarea{
+    border-radius: 10px !important;
+    padding: 12px !important;
+}
+
+/* =========================
+   CONTACT CARD
+========================= */
+.contact-card{
+    border-radius: 15px;
+}
+
+/* =========================
+   ABOUT TEXT
+========================= */
+
+/* BACKGROUND IMAGE FOR ABOUT PAGE */
+.about-hero{
+    background: linear-gradient(rgba(37, 35, 198, 0.6), rgba(0,0,0,0.6)),
+    url("Images/carousel\ 2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CARD STYLE */
+.about-card{
+    border-radius: 15px;
+    background-color: rgba(10, 0, 63, 0.9); /* semi-transparent */
+    color: white;
+    text-align: center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    margin-top: auto;
+    padding: 20px;
+    background-color: rgb(9, 9, 40) !important;
+    color: #f8f9fa;
+}
+footer a{
+    transition: 0.3s ease;
+}
+
+footer a:hover{
+    color: #ffc107 !important;
+    text-decoration: underline;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+    .hero-section{
+        padding: 70px 20px;
+    }
+
+    .hero-section h1{
+        font-size: 35px;
+    }
+
+    .hero-section p{
+        font-size: 16px;
+    }
+
+    .navbar-nav{
+        text-align: center;
+    }
+
+    .banner-img{
+        height: 300px;
+    }
+
+    .card-img-top{
+        height: 220px;
+    }
+
+    .about-text{
+        font-size: 16px;
+    }
+
+}
